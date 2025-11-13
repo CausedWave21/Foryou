@@ -70,6 +70,9 @@ body {
   }
 
   .controls {
-    bottom: 25px;
+    bottom: 15px;          /* move slightly higher for small screens */
+    gap: 10px;              /* reduce gap between buttons */
+    flex-wrap: wrap;        /* allow buttons to wrap if too wide */
+    padding: 0 10px;        /* add small padding from edges */
   }
 }
