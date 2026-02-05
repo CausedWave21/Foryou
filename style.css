@@ -98,23 +98,5 @@ textarea {
     transform: translateY(0);
   }
 }
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.6rem;
-  }
 
-  .cat {
-    font-size: 3.2rem;
-  }
 
-  button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  #noBtn {
-    position: absolute;
-    bottom: -60px;
-    right: 0;
-  }
-}
