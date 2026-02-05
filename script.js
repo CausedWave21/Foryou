@@ -1,34 +1,24 @@
-let currentSlide = 1;
-const totalSlides = 5; // change this number based on how many slides you have
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const buttons = document.getElementById("buttons");
+const form = document.getElementById("form");
+const cat = document.getElementById("cat");
+const submitBtn = document.getElementById("submitBtn");
+const successMsg = document.getElementById("successMsg");
 
-function updateButtons() {
-  document.getElementById("backBtn").style.display = currentSlide === 1 ? "none" : "inline-block";
-  document.getElementById("nextBtn").style.display = currentSlide === totalSlides ? "none" : "inline-block";
-}
+noBtn.addEventListener("mouseenter", () => {
+  const x = Math.random() * 250 - 125;
+  const y = Math.random() * 80 - 120;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
 
-function nextSlide() {
-  if (currentSlide < totalSlides) {
-    changeSlide(currentSlide + 1);
-  }
-}
+yesBtn.addEventListener("click", () => {
+  buttons.style.display = "none";
+  form.style.display = "block";
+  cat.textContent = "😺";
+  cat.style.transform = "scale(1.2)";
+});
 
-function prevSlide() {
-  if (currentSlide > 1) {
-    changeSlide(currentSlide - 1);
-  }
-}
-
-function changeSlide(newSlide) {
-  const image = document.getElementById("slideImage");
-  image.classList.add("fade-out");
-
-  setTimeout(() => {
-    currentSlide = newSlide;
-    image.src = `images/slide${currentSlide}.png`;
-    image.classList.remove("fade-out");
-    updateButtons();
-  }, 300);
-}
-
-// Initialize buttons on load
-window.onload = updateButtons;
+submitBtn.addEventListener("click", () => {
+  successMsg.style.display = "block";
+});
