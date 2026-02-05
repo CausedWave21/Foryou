@@ -9,6 +9,11 @@
 </head>
 <body>
 
+<audio id="bgMusic" loop>
+  <source src="JVKE - her (official lyric video).mp3" type="audio/mpeg">
+</audio>
+
+
   <div class="container">
     <h1>Can you be my Valentine? 🖤</h1>
 
@@ -19,20 +24,45 @@
       <button id="noBtn">No</button>
     </div>
 
-    <div class="form-container" id="form">
-      <h2>Yay 🖤 One last thing…</h2>
 
-      <input type="text" id="pickup" placeholder="Where should I pick you up?" />
-      <input type="time" id="time" />
-      <textarea id="note" rows="3" placeholder="Anything I should know? (optional)"></textarea>
+    <form
+  class="form-container"
+  id="form"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSehLfw1SO24TpDNXxjpy9PJR_f_II87mJ3Qouy7QUOcgCLTsg/formResponse"
+  method="POST"
+  target="hidden_iframe"
+>
 
-      <button class="submit-btn" id="submitBtn">Lock it in 🐾</button>
+  <h2>Yay 🖤 One last thing…</h2>
 
-      <div class="success" id="successMsg">
-        Got it 🖤 The cat has saved the plan.
-      </div>
-    </div>
+  <input
+    type="text"
+    name="entry.1047322231"
+    placeholder="Where should I pick you up?"
+    required
+  />
+
+  <input
+    type="text"
+    name="entry.1296308913"
+    placeholder="What time?"
+    required
+  />
+
+  <textarea
+    name="entry.2090113383"
+    rows="3"
+    placeholder="Anything I should know? (optional)"
+  ></textarea>
+
+  <button class="submit-btn" type="submit">Lock it in 🐾</button>
+
+  <div class="success" id="successMsg">
+    Got it 🖤 The cat has saved the plan.
   </div>
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
   <script src="script.js"></script>
 </body>
