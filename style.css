@@ -118,6 +118,9 @@ textarea {
     right: 0;
   }
 }
+#yesBtn {
+  transition: transform 0.2s ease;
+}
 
 
 
