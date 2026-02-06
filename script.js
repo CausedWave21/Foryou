@@ -5,6 +5,9 @@ const form = document.getElementById("form");
 const cat = document.getElementById("cat");
 const submitBtn = document.getElementById("submitBtn");
 
+let yesScale = 1;
+
+//
 const noTexts = [
   "No",
   "Please",
@@ -19,22 +22,31 @@ const noTexts = [
 let noIndex = 0;
 
 function moveNoButton() {
+  // Move NO button
   const x = Math.random() * 250 - 125;
   const y = Math.random() * 80 - 40;
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 
+  // Change NO text
   noIndex = (noIndex + 1) % noTexts.length;
   noBtn.textContent = noTexts[noIndex];
+
+  // Grow YES button
+  yesScale += 0.15;
+  if (yesScale > 1.8) yesScale = 4; // cap
+  yesBtn.style.transform = `scale(${yesScale})`;
 }
 
-// Desktop hover
+
+// Desktop
 noBtn.addEventListener("mouseenter", moveNoButton);
 
-// Mobile tap
+// Mobile
 noBtn.addEventListener("click", (e) => {
   e.preventDefault();
   moveNoButton();
 });
+
 
 const music = document.getElementById("bgMusic");
 
@@ -54,6 +66,7 @@ const successMsg = document.getElementById("successMsg");
 formEl.addEventListener("submit", () => {
   successMsg.style.display = "block";
 });
+
 
 
 
